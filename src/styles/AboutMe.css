@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "ka1";
+  src: local("ka1"), local("Ka1"),
+       url("../assets/ka1.ttf") format("truetype");
+  font-weight: normal;
+}
+
+.about-page {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* título más arriba */
+  align-items: center;
+  padding: 4rem 2rem 2rem 2rem; /* más espacio arriba */
+  background: linear-gradient(
+    180deg,
+    rgba(142, 50, 179, 1) 0%,
+    rgba(255, 178, 221, 1) 100%
+  );
+  font-family: "ka1", monospace, sans-serif;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  background-image: url("../assets/background.png");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+/* Título en la parte superior */
+.about-title {
+  font-size: 50px;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0px 4px 0px #5c0a9d;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Contenedor horizontal para foto + texto */
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5rem; /* separación entre imagen y texto */
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+/* Contenedor de la imagen con overlay */
+.about-image-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.about-image {
+  position: relative; /* para que z-index funcione */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid black;
+  z-index: 2; /* encima del overlay */
+}
+.about-image-overlay {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background-image: url(/src/assets/overlay1.png?t=1756685542105);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1; /* detrás de la imagen */
+}
+
+/* Texto */
+.about-text {
+  font-size: 28px;
+  line-height: 1.5;
+  color: #ffffff;
+  text-shadow: 0px 3px 0px #402f5c;
+  max-width: 700px;
+  text-align: left;
+}
+
+/* Botón con imagen del astronauta */
+.astronauta-button {
+  position: fixed; /* fijo en la pantalla */
+  bottom: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Imagen del cartel arriba */
+.cartel-image {
+  width: 200px; /* ajusta según tu imagen */
+  margin-bottom: 6px; /* espacio entre cartel y astronauta */
+  user-select: none;
+  pointer-events: none; /* para que no interfiera con el botón */
+transform: translate(-140px, -35px);
+}
+.cartel-container {
+  position: relative;
+  width: 140px; /* ajusta al tamaño de tu imagen */
+  margin-bottom: 6px;
+  user-select: none;
+  pointer-events: none; /* para que el clic pase al botón */
+  
+}
+.cartel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ transform: translate(-180px, -75px);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-family: "ka1", monospace, sans-serif;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  width: 90%; /* para que el texto no se salga del cartel */
+  white-space: normal;
+}
+
+/* Imagen del astronauta */
+.astronauta-button img:last-child {
+  width: 100px;
+  object-fit: contain;
+  transition: transform 0.3s;
+  transform: translate(-100px, -50px);
+}
+
+
+
+
+.about-text strong {
+  color: #ffb2dd; /* Color para resaltar */
+}
+
+/* Responsive para pantallas chicas */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .about-image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-text {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .about-image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-text {
+    font-size: 18px;
+  }
+}

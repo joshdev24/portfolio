@@ -1,0 +1,78 @@
+/* Navbar.css */
+
+@font-face {
+  font-family: "Ka1";
+  src: url("/fonts/Ka1-Regular.ttf") format("truetype");
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039; 
+  /* Letras mayúsculas, minúsculas y números */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center; /* centrado externo */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar-inner {
+  width: 100%;
+  max-width: 1200px; /* ancho fijo */
+  display: flex;
+  justify-content: center; /* centrado interno */
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-family: ka1, monospace;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-list li {
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navbar-list li:hover {
+  transform: scale(1.1);
+  color: #6a1b9a;
+}
+
+
+
+.navbar select {
+  background: #782aa5c7;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 0.3rem 1rem; /* un poquito más alto que antes */
+  height: 38px;          /* ajusta según altura de navbar */
+  cursor: pointer;
+  font-family: "ka1", monospace, sans-serif;
+  font-size: 1rem;       /* mismo tamaño que los li */
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar select:hover {
+  background: #7a5994;
+}
+
+.navbar select:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+
+

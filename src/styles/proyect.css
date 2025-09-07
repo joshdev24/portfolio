@@ -1,0 +1,190 @@
+
+.project-bg {
+  position: relative;
+  width: 100%;
+  max-width: 250px; /* ajustar según tu diseño */
+  height: 250px; /* alto del contenedor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.project-img {
+    max-height: 80%;
+   
+}
+
+
+/* Enlace de GitHub */
+.github-link {
+  display: inline-block;
+  background: #24292f;   /* color GitHub */
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid #000;
+  box-shadow: 0px 4px 0px #111;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px #111;
+}
+
+.github-link:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px #111;
+}
+
+
+.intro-cartel {
+  background-size: 98% auto;
+  background-image: url('../assets/cartel1.png'); /* 👉 solo cartel3 */
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2rem 0rem;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 3rem auto 0 auto;  /* 👈 lo baja un poco */
+}
+
+.profesor-img.intro {
+  position: absolute;
+  bottom: -210px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84px;
+  z-index: 20;
+}
+
+/* Profesor en proyectos: parte derecha */
+.profesor-img.project {
+  position: absolute;
+  right: -90px;    /* lo empuja hacia afuera del cartel */
+  width: 100px;
+  z-index: 20;
+
+}
+
+.skills-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  gap: 1rem;               /* espacio entre imagen y botón */
+}
+
+
+/* Texto intro */
+.skills-right1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+  margin-left: 2rem;
+  color : #2a3ea5c7;
+}
+
+.skills-description1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.8rem;
+  max-width: 600px;
+  color : #6d1ab9;
+}
+
+.colon1 {
+  color: #6d1ab9;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Profesor flotando delante del cartel */
+.profesor-img {
+    position: absolute;
+    bottom: -210px;
+    transform: translateX(-50%);
+    width: 84px;
+    z-index: 20;
+}
+
+@keyframes float {
+  0%   { transform: translate(-50%, 0); }
+  50%  { transform: translate(-50%, -10px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+
+
+.nave-container {
+  position: fixed;
+  top: 140px;  /* ajusta altura */
+  right: 100px; /* ajusta posición */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 60;
+}
+
+.ship-flotante {
+  width: 220px;   /* más chico que el cartel grande */
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.ship-flotante .ship-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ship-text {
+    position: absolute;
+    top: 90%;
+    left: 180px;
+    transform: translate(-180px, -75px);
+    width: 90%;
+    white-space: normal;
+    font-size: 0.9rem;
+    color: blueviolet;
+}
+
+.nave-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nave-img {
+  width: 100px; /* tamaño nave */
+  height: auto;
+}
+
+
+.nave-btn:hover .nave-img {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}

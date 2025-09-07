@@ -1,0 +1,90 @@
+.project-section {
+  padding: 3rem 0rem;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.project-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+/* Wrapper centrado verticalmente */
+.project-wrapper {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Rol flotante */
+.experience-role {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6a1b9a;
+  text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+  z-index: 11;
+  text-align: center;
+  width: 100%;
+}
+
+/* Flechas */
+.arrow-btn {
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  outline: none;
+}
+.arrow-btn.left { left: -80px; background-image: url('../assets/flechaiz.png'); }
+.arrow-btn.right { right: -80px; background-image: url('../assets/flechade.png'); }
+
+/* Nave */
+.skills-ship {
+  position: absolute;
+  bottom: 40px;
+  width: 120px;
+  z-index: 10;
+  pointer-events: none; /* no clickeable hasta la última página */
+  transform: none;
+  animation: float 3s ease-in-out infinite;
+  transition: left 0.6s ease-in-out;
+}
+
+/* Flotación vertical */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+

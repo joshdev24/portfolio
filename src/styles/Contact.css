@@ -1,0 +1,186 @@
+
+
+@font-face {
+  font-family: "ka1";
+  src: local("ka1"), local("Ka1"),
+       url("../assets/ka1.ttf") format("truetype");
+  font-weight: normal;
+}
+
+.contact-section {
+  padding: 3rem 0rem;
+  background-image: url('../assets/background.png'); /* mismo fondo */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+.contact-btn-wrapper {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* cartel retro */
+.contact-cartel {
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  min-height: 500px; /* antes 400px, ahora un poco más grande */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 👉 para que esté más abajo */
+  padding-top: 60px; /* separación desde arriba */
+}
+
+.contact-overlay {
+  position: absolute;
+  top: 60px; /* un poco más abajo dentro del cartel */
+  width: 85%;
+  max-width: 550px;
+  text-align: left;
+  padding: 2.5rem;
+  border-radius: 16px;
+  height: auto; /* que crezca según el contenido */
+  min-height: 600px; /* aumentar para que quepa el botón */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* arriba hacia abajo */
+}
+
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem; /* un poco más grande */
+  border: none;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  font-size: 1.1rem; /* tamaño de texto más grande */
+}
+
+
+
+.contact ::placeholder {
+  color: #999;
+  font-family: "ka1", monospace, sans-serif;
+  font-weight: normal;
+}
+.contact-btn {
+  margin: 3rem auto 0; /* un poco más abajo que antes */
+  display: block;       /* centrado horizontal */
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #6a1b9a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: "ka1", monospace, sans-serif;
+  cursor: pointer;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+  transition: transform 0.2s ease;
+  animation: floatBtn 3s ease-in-out infinite;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+}
+
+.linkedin-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  width: 50px; /* tamaño de la imagen */
+  height: 50px;
+}
+
+.linkedin-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.linkedin-btn img:hover {
+  transform: scale(1.1);
+}
+@keyframes floatBtn {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+
+.contact-status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-status.success {
+  color: #34690d; /* verde */
+}
+
+.contact-status.error {
+  color: #9c150c; /* rojo */
+}
+
+/* profesor a un costado */
+.profesor-img.contact {
+  position: absolute;
+  right: -100px;
+  bottom: -130px;
+}
+
+/* Nave espacial arriba del título */
+.contact-nave {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  z-index: 12;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Astronauta abajo a la izquierda del cartel */
+.astronauta-img.contact {
+  position: absolute;
+  left: -70px;
+  z-index: 10;
+  pointer-events: none;
+  bottom: -130px;
+}
+
+/* Animación flotante */
+@keyframes float {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
