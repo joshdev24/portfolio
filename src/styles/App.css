@@ -8,7 +8,9 @@
 
 @font-face {
   font-family: "Starjout";
-  src: url("/fonts/starjout.ttf") format("truetype");
+  src: url("/fonts/Starjout.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 html, body {
