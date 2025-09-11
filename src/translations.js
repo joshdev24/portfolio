@@ -1,10 +1,5 @@
 const translations = {
   en: {
-    // Home
-    welcome: "Welcome",
-    pressPlay: "Press play to enter story mode",
-    start: "START",
-    follow: "Follow me at",
     navbar: {
       about: "About Me",
       skills: "Skills",
@@ -14,27 +9,21 @@ const translations = {
     },
     // AboutMe
     about: {
-      title: "It's Joshua !!",
+      title2: "Hello interstellar traveler!",
+      title: "it's Joshua",
       description:
-        "A passionate fullstack developer with a love for creating engaging web experiences. Graduate from National University of Technology in Buenos Aires.",
+        "A passionate fullstack developer with a love for creating engaging web experiences. Graduate from National University of Technology in Buenos Aires, Argentina.",
       nextLevel: "Click me to the next level",
     },
     // Skills
     skills: {
-      title: "Character Skills",
-      description1: "These skills are constantly being upgraded",
-      description2: "Character skills increase at higher levels",
-      tip: "Increase skills with constant learning",
-      nextLevel: "Click on the professor to the next level"
+      title: "My Skills"
     },
     // Projects
     projects: {
       title: "My Projects",
-      introTitle: "Welcome to my Project Gallery 🚀",
-      introText: "Hi there, this is Dr. Projectton and he will show you some of the projects I have worked on and successfully completed. A small description with the GitHub link for each project will be provided.",
-      introTip: "Enjoy!",
       viewProject: "View on GitHub",
-      nextLevel: "Click the ship to go to the next level!"
+
     },
     // Experience
     experience: {
@@ -53,7 +42,7 @@ const translations = {
           company: "Freelance",
           duration: "2025 - Present",
           description:
-            "Web platform for a law and business services firm built with React for the frontend and MongoDB for the backend. Provides tools for managing legal and corporate procedures including secure client authentication document submission and appointment scheduling. Designed to optimize client interaction improve efficiency and deliver a professional user experience.",
+            "Web platform for a law and business services firm built with React for the frontend and Node.js Express for the backend using MongoDB. Provides tools for managing legal and corporate procedures including secure client authentication document submission and appointment scheduling. Designed to optimize client interaction improve efficiency and deliver a professional user experience.",
         },
       ],
     },
@@ -91,32 +80,24 @@ const translations = {
     },
     // AboutMe
     about: {
+      title2: "Hola viajero interestelar!",
       title: "¡¡Soy Joshua!!",
       description:
-        "Un desarrollador fullstack apasionado con amor por crear experiencias web atractivas. Graduado de la Universidad Tecnologica Nacional en Buenos Aires.",
-      nextLevel: "Haz clic para ir al siguiente nivel",
+        "Un desarrollador fullstack apasionado con amor por crear experiencias web atractivas. Graduado de la Universidad Tecnologica Nacional en Buenos Aires, Argentina.",
     },
     // Skills
     skills: {
-      title: "Habilidades del Personaje",
-      description1: "Estas habilidades se actualizan constantemente",
-      description2: "Las habilidades del personaje aumentan a niveles mas altos",
-      tip: "Mejora tus habilidades con aprendizaje constante",
+      title: "Mis Habilidades",
       nextLevel: "Haz clic para el siguiente nivel"
     },
     // Projects
     projects: {
       title: "Mis Proyectos",
-      introTitle: "Bienvenido a mi Galería de Proyectos 🚀",
-      introText: "Hola soy el Dr Projectton y te mostrare algunos de los proyectos en los que he trabajado y completado con exito. Se proporcionara una pequena descripcion con el enlace a GitHub de cada proyecto.",
-      introTip: "¡Disfruta!",
       viewProject: "Ver en GitHub",
-      nextLevel: "¡Haz clic en la nave para ir al siguiente nivel!"
     },
     // Experience
     experience: {
       title: "Experiencia Laboral",
-        nextLevel: "Click para el Nivel Final",
       experiences: [
         {
           role: "Programador de Software",

@@ -1,14 +1,8 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import "../styles/Skills.css";
 import "../styles/proyect.css";
-import profesorImg from "../assets/profesor.png"; 
-import cartel3 from "../assets/cartel1.png"; 
-import icon from "../assets/ecommerce.png"; 
-import icon2 from "../assets/whatsapp.png"; 
-import fondoIcon from "../assets/fondo-icon.png"; 
-import naveImg from "../assets/nave.png"; 
-import cartel from "../assets/cartel.png";
+import clickOverlayImg from "../assets/click-overlay.png";
+import React from "react";
 import Navbar from "./NavBar";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../translations";
@@ -17,127 +11,84 @@ const allProjects = [
   {
     title: "E-commerce App",
     description: {
-      en: "Full stack ecommerce application built with React for the frontend and Node.js and Express for the backend using MongoDB and MySQL. Users can create edit delete and publish products with secure user authentication and registration confirmation. The platform delivers a fast interactive and personalized shopping experience.",
-      es: "Aplicacion de ecommerce full stack construida con React en el frontend y Node.js Express en el backend usando MongoDB y MySQL. Los usuarios pueden crear editar eliminar y publicar productos con autenticacion segura y confirmacion de registro. La plataforma ofrece una experiencia de compra rapida interactiva y personalizada."
+      en: "Developed with React for the frontend, and Node.js with Express for the backend, using MongoDB and MySQL as databases. Includes product management (create, edit, delete, publish) and secure authentication with email confirmation, delivering a fast and personalized shopping experience.",
+
+      es: "Desarrollada con React para el frontend, y Node.js con Express para el backend, utilizando MongoDB y MySQL como bases de datos. Incluye gestión de productos (crear, editar, eliminar, publicar) y autenticación segura con confirmación por correo electrónico, ofreciendo una experiencia de compra rápida y personalizada.",
     },
-    image: icon,
-    github: "https://github.com/tuusuario/ecommerce",
+    github: "https://github.com/joshdev24/ProyectoFinalFrontEnd/tree/main/src",
   },
   {
     title: "WhatsApp Clone",
     description: {
-      en: "Built with React HTML CSS and JavaScript simulating a complete messaging system. Includes contact management personalized chats and user profiles. Designed to provide an interactive dynamic and responsive experience with a clean interface and smooth animations.",
-      es: "Construido con React y JavaScript simulando un sistema completo de mensajeria. Incluye gestion de contactos chats personalizados y perfiles de usuario. Disenado para ofrecer una experiencia interactiva dinamica y responsiva con interfaz limpia y animaciones suaves."
-    },
-    image: icon2,
-    github: "https://github.com/tuusuario/whatsapp-clone",
+      en: "Built with React, HTML, CSS, and JavaScript, simulating a messaging system with contact management, personalized chats, and user profiles. Focused on creating an interactive, dynamic, and responsive experience with a clean interface and smooth animations.",
+      es: "Construida con React, HTML, CSS y JavaScript, simulando un sistema de mensajería con gestión de contactos, chats personalizados y perfiles de usuario, insipirada en la pelicula de Intesamente. Enfocada en brindar una experiencia interactiva, dinámica y responsiva con una interfaz limpia y animaciones fluidas.",
+    github: "https://github.com/joshdev24/proyectodespFRONTEND/tree/main/src",
   },
+},
   {
     title: "Click Mini Game",
     description: {
-      en: "A fast paced web minigame built with React and Vite. The goal is to click as quickly as possible within a limited time with real time score tracking and visual effects. Optimized to support jitter clicking for smooth and responsive gameplay.",
-      es: "Un minijuego web de ritmo rapido construido con React y Vite. El objetivo es hacer clics lo mas rapido posible dentro de un tiempo limitado con seguimiento de puntuacion en tiempo real y efectos visuales. Optimizado para soportar jitter clicking para una jugabilidad fluida y responsiva."
+      en:  "A fast-paced clicker mini game developed with React. Includes jitter-clicking support, real-time score tracking, and fun animations to keep the player engaged while competing for the best score.",
+      es: "Un mini juego rápido de clicks desarrollado con React. Incluye soporte para jitter clicking, conteo de puntaje en tiempo real y animaciones divertidas para mantener al jugador motivado mientras compite por el mejor récord.",
     },
-    image: "/projects/click-game.png",
-    github: "https://github.com/tuusuario/click-mini-game",
+    github: "https://github.com/joshdev24/JuegoGato/tree/main/src",
   },
-]
-
+];
 
 export default function Projects() {
   const [page, setPage] = useState(0);
-  const totalPages = allProjects.length + 1; 
-  const navigate = useNavigate();
-
- const { language } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const totalPages = allProjects.length;
+  const { language } = useLanguage();
   const t = translations[language].projects;
 
   return (
-    <section className="skills-section">
+    <section className="projects-section">
       <Navbar />
-      <div className="skills-container">
-        <h2 className="skills-title">▌{t.title}▐</h2>
+      <h2 className="projects-main-title">{t.title}</h2>
 
-        <div className="skills-wrapper">
+      <div className="projects-container">
+        <div className="projects-title-wrapper">
           <button
             className="arrow-btn left"
-            onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
-            disabled={page === 0}
+            onClick={() => { setPage(prev => Math.max(prev - 1, 0)); setOpen(false); }}
           />
-
-          {page === 0 ? (
-            <div
-              className="skills-cartel intro-cartel"
-              style={{ backgroundImage: `url(${cartel3})` }}
-            >
-              <div className="cartel-overlay">
-                <div className="skills-right1">
-                  <p className="skills-description1">{t.introTitle}</p>
-                  <p>{t.introText}</p>
-                  <p className="colon1">{t.introTip}</p>
-                </div>
-              </div>
-              <img src={profesorImg} alt="Dr. ProjectGuy" className="profesor-img intro"/>
-            </div>
-          ) : (
-            <div className="skills-cartel">
-              <div className="cartel-overlay">
-                <div className="skills-left">
-                  <div
-                    className="project-bg"
-                    style={{
-                      backgroundImage: `url(${fondoIcon})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <img
-                      src={allProjects[page - 1].image}
-                      alt={allProjects[page - 1].title}
-                      className="project-img"
-                    />
-                  </div>
-                  <a
-                    href={allProjects[page - 1].github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="github-link"
-                  >
-                    {t.viewProject}
-                  </a>
-                </div>
-
-                <div className="skills-separator"></div>
-
-                <div className="skills-right">
-                  <h3>{allProjects[page - 1].title}</h3>
-                  <p>{allProjects[page - 1].description[language]}</p>
-                </div>
-              </div>
-              <img src={profesorImg} alt="Dr. ProjectGuy" className="profesor-img project"/>
-            </div>
-          )}
-
+          <h2 className="projects-title">{allProjects[page].title}</h2>
           <button
             className="arrow-btn right"
-            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages - 1))}
+            onClick={() => { setPage(prev => Math.min(prev + 1, totalPages - 1)); setOpen(false); }}
             disabled={page === totalPages - 1}
           />
-
-          {page === totalPages - 1 && (
-            <div className="nave-container">
-              <div className="ship-flotante" style={{ backgroundImage: `url(${cartel})` }}>
-                <div className="ship-overlay">
-                  <p className="ship-text">{t.nextLevel}</p>
-                </div>
-              </div>
-              <button className="nave-btn" onClick={() => navigate("/experience")}>
-                <img src={naveImg} alt="Go to Experience" className="nave-img" />
-              </button>
-            </div>
-          )}
         </div>
+
+        <div className="projects-content">
+  {!open ? (
+    <div
+      className="clicktoopen-overlay"
+      style={{ backgroundImage: `url(${clickOverlayImg})` }}
+      onClick={() => setOpen(true)}
+    />
+  ) : (
+    <div className="projects-description-wrapper">
+      <div className="projects-description-box">
+        <p>{allProjects[page].description[language]}</p>
+        <a
+          href={allProjects[page].github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github-link"
+        >
+          {t.viewProject}
+        </a>
+        <button className="close-btn" onClick={() => setOpen(false)}>
+          Close
+        </button>
       </div>
-    </section>
+
+    </div>
+  )}
+</div>
+</div>
+</section>
   );
 }

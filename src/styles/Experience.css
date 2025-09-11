@@ -1,90 +1,167 @@
-.project-section {
-  padding: 3rem 0rem;
-  background-image: url('../assets/background.png');
+/* === Contenedor General === */
+.experience-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-image: url("../assets/experienceback.png");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
   box-sizing: border-box;
-  color: #ffffff;
-}
-
-.project-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.project-title {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  display: inline-block;
-  padding: 0.5rem 1rem;
+  font-family: "starjout", monospace, sans-serif;
   color: #fff;
-}
-
-/* Wrapper centrado verticalmente */
-.project-wrapper {
-  position: relative;
-  min-height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-/* Rol flotante */
-.experience-role {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  font-weight: 700;
-  color: #6a1b9a;
-  text-shadow:
-    -1px -1px 0 #fff,
-     1px -1px 0 #fff,
-    -1px  1px 0 #fff,
-     1px  1px 0 #fff;
-  z-index: 11;
   text-align: center;
-  width: 100%;
+/* Fade arriba y abajo */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
 }
 
-/* Flechas */
+.experience-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2));
+  pointer-events: none;
+}
+
+/* === Título Principal === */
+.experience-main-title {
+    font-size: 3rem;
+  font-weight: 100;
+  margin-bottom: 4rem;
+  font-family: "starjout", monospace, sans-serif;
+   color: transparent; -webkit-text-stroke: 2px rgba(168, 104, 184, 0.8); filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+   animation: slideLeft 2s ease forwards infinite
+}
+
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+/* === Wrapper del título de cada experiencia === */
+.experience-title-wrapper {
+  display: flex;
+  align-items: center;   /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
+  gap: 1.5rem;           /* separación entre flechas y título */
+  margin-top: 4rem;
+}
+
+.experience-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* === Flechas === */
 .arrow-btn {
-  width: 60px;
-  height: 60px;
+  width: 50px;         /* más chico */
+  height: 50px;        /* más chico */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
+  background-color: transparent; /* elimina fondo blanco */
+  outline: none;                 /* quita borde de enfoque */
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  outline: none;
-}
-.arrow-btn.left { left: -80px; background-image: url('../assets/flechaiz.png'); }
-.arrow-btn.right { right: -80px; background-image: url('../assets/flechade.png'); }
-
-/* Nave */
-.skills-ship {
-  position: absolute;
-  bottom: 40px;
-  width: 120px;
-  z-index: 10;
-  pointer-events: none; /* no clickeable hasta la última página */
-  transform: none;
-  animation: float 3s ease-in-out infinite;
-  transition: left 0.6s ease-in-out;
+  transition: transform 0.2s ease;
 }
 
-/* Flotación vertical */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+.arrow-btn.left {
+  background-image: url('../assets/flechaizquierda.png');
 }
 
+.arrow-btn.right {
+  background-image: url('../assets/flechaderecha.png');
+}
+
+.arrow-btn:hover {
+  transform: scale(1.1);
+}
+
+
+/* === Contenido (Click overlay y descripción) === */
+.experience-content {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Botón ClickToOpen */
+.clicktoopen-overlay {
+  width: 300px;
+  max-width: 90%;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  background-image: url('../assets/click-overlay.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 13rem; 
+}
+
+.clicktoopen-overlay:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Caja de Descripción */
+.experience-description-box {
+  max-width: 700px;
+  background: rgba(0,0,0,0.4);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Links (ej: GitHub, si los agregás) */
+.experience-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ffb2dd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.experience-link:hover {
+  text-decoration: underline;
+}
+
+.close-btn {
+  margin: 1rem auto 0 auto;  /* centrado horizontal */
+  display: block;           /* asegura que se comporte como bloque */
+  padding: 0.5rem 1rem;
+  background: #8b5bd8;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #6a1b9a;
+}

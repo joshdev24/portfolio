@@ -1,197 +1,130 @@
-/* ======== Estilo retro terminal ======== */
+/* Skills.css */
+
+/* Fuente opcional si querés un estilo especial */
 @font-face {
-  font-family: "Ka1";
-  src: url("/fonts/Ka1-Regular.ttf") format("truetype");
-  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039; 
-  /* Letras mayúsculas, minúsculas y números */
+  font-family: "starjout";
+  src: url("../assets/starjout.ttf") format("truetype");
 }
 
 .skills-section {
-  padding: 3rem 0rem;
-  background-image: url('../assets/background.png');
-  background-size: cover;
-  background-position: center;
+  width: 100vw;
   min-height: 100vh;
-  box-sizing: border-box;
-  color: #000;
-}
-
-.skills-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.skills-title {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  color: #fff;
-
-}
-
-/* Cartel retro que contiene la lista */
-.skills-cartel {
-  background-image: url('../assets/cartel4.png');
-  background-size: 95% auto, cover;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
-  padding: 3rem 2rem;
-  min-height: 400px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-}
-
-/* Lista retro dentro del cartel */
-.skills-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 3rem;
-  /* baja la lista dentro del cartel */
-  font-size: 1.6rem;
-  /* texto más grande */
-  font-weight: bold;
-  line-height: 2.4rem;
-  /* más espacio entre líneas */
-  text-align: left;
-  max-width: 350px;
-  padding-left: 2.5rem;
-  /* lo mueve hacia adentro */
-  margin-left: 3rem;
-  /* lo empuja más a la derecha */
-}
-
-.skill-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  /* espacio entre icono y texto */
-  margin: 1rem 0;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #000;
-  text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
-  animation: wave 1.5s infinite ease-in-out alternate;
-}
-
-/* Efecto ola para las habilidades */
-.skill-item:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.skill-item:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.skill-item:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.skill-item:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.skill-item:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.skill-item:nth-child(6) {
-  animation-delay: 0.5s;
-}
-
-@keyframes wave {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-
-.cartel-overlay {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* estira los hijos */
-  height: 100%;
-}
-
-.skills-left, 
-.skills-right {
-  flex: 1;
-}
-
-.skills-right {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* centro vertical */
-  align-items: center;       /* centro horizontal */
-  text-align: center;
-  gap: 1rem;
-  margin: 3rem;         /* 👉 lo empuja hacia la derecha */
-}
-
-.skills-right .colon {
-  color: #9b59b6; /* violeta */
-}
-
-
-
-.skills-separator {
-  width: 3px;
-  background-color: #000000; /* verde neón */
-  margin: 0 1.5rem;
-  box-shadow: 0 0 8px #ffffff;
-}
-
-/* Wrapper de habilidades y botones */
-.skills-wrapper {
-  position: relative;
-}
-
-/* Botones de flechas */
-.arrow-btn {
-  width: 60px;
-  height: 60px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-image: url("../assets/spacebackground.png");
+  background-size: cover;
   background-position: center;
-  border: none;
-  cursor: pointer;
+  box-sizing: border-box;
+  font-family: "starjout", monospace, sans-serif;
+  color: #fff;
+  text-align: center;
+/* Fade arriba y abajo */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.skills-section::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2));
+  pointer-events: none;
 }
 
-.arrow-btn.left {
-  left: -80px;
-  /* fuera del cartel */
-  background-image: url('../assets/flechaiz.png');
+/* Título */
+.skills-title {
+   font-size: 3rem;
+  font-weight: 100;
+  margin-bottom: 4rem;
+  font-family: "starjout", monospace, sans-serif;
+   color: transparent; -webkit-text-stroke: 2px #b4ff9bcc; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    animation: bounce 1s ease infinite;
 }
 
-.arrow-btn.right {
-  right: -80px;
-  /* fuera del cartel */
-  background-image: url('../assets/flechade.png');
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
-.arrow-btn:hover {
-  transform: scale(1.2) translateY(-50%);
+
+
+/* Wrapper de skills */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  justify-items: center;
 }
 
+/* Cada skill */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border: 2px solid #8e32b3; /* borde violeta neon */
+  border-radius: 12px;
+  background: transparent;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 150px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+
+
+
+
+
+
+.skill-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #8e32b3;
+}
+
+/* Icono de cada skill */
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* 👉 exactamente 2 columnas */
+  }
+
+  .skill-item {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .skills-wrapper {
+    grid-template-columns: repeat(2, 1fr); /* 👉 también en móviles */
+    gap: 0.8rem;
+  }
+
+  .skill-item {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}

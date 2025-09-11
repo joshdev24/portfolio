@@ -1,32 +1,48 @@
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "../styles/Navbar.css";
-import { useLanguage } from "../context/LanguageContext";
-import translations from "../translations";
+import { useLanguage } from "../context/LanguageContext"; // 👈 importar contexto
+import translations from "../translations"; // 👈 importar textos
 
-export default function Navbar() {
-  const navigate = useNavigate();
-  const { language, setLanguage } = useLanguage();
+export default function Navbar({ handleLinkClick }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage } = useLanguage(); // ✅ usamos contexto directo
   const t = translations[language].navbar;
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="navbar">
-      <ul className="navbar-list">
-        <li onClick={() => navigate("/about")}>{t.about}</li>
-        <li onClick={() => navigate("/skills")}>{t.skills}</li>
-        <li onClick={() => navigate("/proyects")}>{t.projects}</li>
-        <li onClick={() => navigate("/experience")}>{t.experience}</li>
-        <li onClick={() => navigate("/contact")}>{t.contact}</li>
-      </ul>
-      {/* Selector de idioma */}
-      <select
-        value={language}
-        onChange={(e) => setLanguage(e.target.value)}
-        style={{ marginLeft: "2rem", fontWeight: "bold" }}
-      >
-        <option value="en">EN</option>
-        <option value="es">ES</option>
-      </select>
+      <div className="navbar-inner">
+        <div className="navbar-logo">
+          <h1>MyPortfolio</h1>
+        </div>
+
+        {/* Botón hamburguesa */}
+        <div className={`navbar-toggle ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Lista de links */}
+        <ul className={`navbar-list ${isOpen ? "active" : ""}`}>
+          <li onClick={() => { handleLinkClick("about"); setIsOpen(false); }}>{t.about}</li>
+          <li onClick={() => { handleLinkClick("skills"); setIsOpen(false); }}>{t.skills}</li>
+          <li onClick={() => { handleLinkClick("projects"); setIsOpen(false); }}>{t.projects}</li>
+          <li onClick={() => { handleLinkClick("experience"); setIsOpen(false); }}>{t.experience}</li>
+          <li onClick={() => { handleLinkClick("contact"); setIsOpen(false); }}>{t.contact}</li>
+        </ul>
+
+        {/* Selector de idioma */}
+        <select
+          className="language-select"
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
+        >
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
     </nav>
   );
 }
-

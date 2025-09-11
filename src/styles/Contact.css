@@ -1,186 +1,119 @@
-
-
-@font-face {
-  font-family: "ka1";
-  src: local("ka1"), local("Ka1"),
-       url("../assets/ka1.ttf") format("truetype");
-  font-weight: normal;
-}
-
 .contact-section {
-  padding: 3rem 0rem;
-  background-image: url('../assets/background.png'); /* mismo fondo */
-  background-size: cover;
-  background-position: center;
+  width: 100vw;
   min-height: 100vh;
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-title {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  color: #fff;
-}
-.contact-btn-wrapper {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-/* cartel retro */
-.contact-cartel {
-  position: relative;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  min-height: 500px; /* antes 400px, ahora un poco más grande */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* 👉 para que esté más abajo */
-  padding-top: 60px; /* separación desde arriba */
-}
-
-.contact-overlay {
-  position: absolute;
-  top: 60px; /* un poco más abajo dentro del cartel */
-  width: 85%;
-  max-width: 550px;
-  text-align: left;
-  padding: 2.5rem;
-  border-radius: 16px;
-  height: auto; /* que crezca según el contenido */
-  min-height: 600px; /* aumentar para que quepa el botón */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* arriba hacia abajo */
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/contactback.png");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  padding: 4rem 2rem;
+  font-family: "starjout", monospace, sans-serif;
+  color: #fff;
+  text-align: center;
+/* Fade arriba y abajo */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2));
+  pointer-events: none;
+}
+
+.contact-main-title {
+  font-size: 3rem;
+  font-weight: 100;
+  margin-bottom: 4rem;
+  font-family: "starjout", monospace, sans-serif;
+   color: transparent; -webkit-text-stroke: 2px rgba(177, 61, 119, 0.8); filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))
 }
 
 
-.contact-form label {
-  display: block;
-  margin-bottom: 1rem;
-  font-weight: 600;
+.linkedin-btn {
+  padding: 0.7rem 1.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+
+
+/* Contenedor del formulario */
+.contact-container {
   width: 100%;
-  padding: 0.8rem; /* un poco más grande */
+  max-width: 700px;
+}
+
+/* Cada fila del formulario: label a la izquierda, input a la derecha */
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-row label {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #e0d7f7; /* violeta clarito */
+}
+
+.contact-row input,
+.contact-row textarea {
+  flex: 2;
+  background: transparent;
+  border: 2px solid rgba(139, 91, 216, 0.5); /* violeta muy claro */
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-row input::placeholder,
+.contact-row textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-btn {
+  margin-top: 2rem;
+  padding: 0.7rem 2rem;
+  background: #8b5bd8;
   border: none;
   border-radius: 8px;
-  margin-top: 0.3rem;
-  font-size: 1.1rem; /* tamaño de texto más grande */
-}
-
-
-
-.contact ::placeholder {
-  color: #999;
-  font-family: "ka1", monospace, sans-serif;
-  font-weight: normal;
-}
-.contact-btn {
-  margin: 3rem auto 0; /* un poco más abajo que antes */
-  display: block;       /* centrado horizontal */
-  padding: 0.8rem 1.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #6a1b9a;
   color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-family: "ka1", monospace, sans-serif;
+  font-weight: bold;
+  font-family: "starjout", monospace, sans-serif;
+  font-size: 1.2rem;
   cursor: pointer;
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-  transition: transform 0.2s ease;
-  animation: floatBtn 3s ease-in-out infinite;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-btn:hover {
-  transform: scale(1.05);
+  background: #56c29e;
 }
-
-.linkedin-btn {
-  display: block;
-  margin: 1.5rem auto 0;
-  width: 50px; /* tamaño de la imagen */
-  height: 50px;
-}
-
-.linkedin-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.linkedin-btn img:hover {
-  transform: scale(1.1);
-}
-@keyframes floatBtn {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
 
 .contact-status {
   margin-top: 1rem;
-  font-size: 1rem;
   font-weight: bold;
-  text-align: center;
 }
 
 .contact-status.success {
-  color: #34690d; /* verde */
+  color: #4caf50;
 }
 
 .contact-status.error {
-  color: #9c150c; /* rojo */
-}
-
-/* profesor a un costado */
-.profesor-img.contact {
-  position: absolute;
-  right: -100px;
-  bottom: -130px;
-}
-
-/* Nave espacial arriba del título */
-.contact-nave {
-  position: absolute;
-
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  z-index: 12;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Astronauta abajo a la izquierda del cartel */
-.astronauta-img.contact {
-  position: absolute;
-  left: -70px;
-  z-index: 10;
-  pointer-events: none;
-  bottom: -130px;
-}
-
-/* Animación flotante */
-@keyframes float {
-  0% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
-  100% { transform: translateX(-50%) translateY(0); }
+  color: #f44336;
 }

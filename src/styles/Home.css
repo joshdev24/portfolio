@@ -166,3 +166,189 @@ body {
     transform: translateY(0);
   }
 }
+
+
+/* -------------------------
+   Media Queries: Tablets grandes
+   (1024px a 769px)
+------------------------- */
+@media (max-width: 1024px) {
+  .macbook-pro .container {
+    padding-left: 3rem;
+    justify-content: flex-start;
+  }
+
+  .welcome-box {
+    width: 350px;
+    height: 150px;
+  }
+
+  .welcome-text {
+    font-size: 55px;
+  }
+
+  .press-play {
+    font-size: 1.2rem;
+  }
+
+  .follow-text {
+    font-size: 1rem;
+  }
+
+  .socials-placeholder {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .start-container {
+    margin-left: 2rem;
+  }
+
+  .start-btn {
+    font-size: 1.3rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+/* -------------------------
+   Media Queries: Tablets pequeñas
+   (768px a 601px)
+------------------------- */
+@media (max-width: 768px) {
+  .macbook-pro .container {
+    padding-left: 2rem;
+    justify-content: flex-start;
+  }
+
+  .welcome-box {
+    width: 300px;
+    height: 130px;
+  }
+
+  .welcome-text {
+    font-size: 48px;
+  }
+
+  .press-play {
+    font-size: 1.1rem;
+  }
+
+  .follow-text {
+    font-size: 0.95rem;
+  }
+
+  .socials-placeholder {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+  }
+
+  .start-container {
+    display: flex;
+    flex-direction: column; /* apila verticalmente */
+    align-items: center;    /* centra horizontalmente */
+    margin-left: 0;
+    margin-top: 2rem;       /* separa del subtitulo */
+  }
+
+  .start-btn {
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+    margin-bottom: 1rem;    /* espacio entre Start y LinkedIn */
+  }
+
+  .linkedin-button {
+    left: 0;
+    margin-top: 0;
+  }
+}
+
+/* -------------------------
+   Media Queries: Celulares
+   (max-width: 600px)
+------------------------- */
+@media (max-width: 600px) {
+  .macbook-pro .container {
+    padding-left: 1.5rem;
+    align-items: center; /* centra contenido horizontalmente */
+    text-align: center;
+    justify-content: flex-start;
+    padding-top: 2rem; /* espacio desde el top */
+  }
+
+  .welcome-box {
+    width: 90%;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome-text {
+    font-size: 40px;
+  }
+
+  .press-play {
+    font-size: 1rem;
+  }
+
+  .follow-text {
+    font-size: 0.9rem;
+  }
+
+  .socials-placeholder {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  /* Contenedor Start centrado encima de LinkedIn */
+  .start-container {
+    display: flex;
+    flex-direction: column; /* apila Start sobre LinkedIn */
+    align-items: center;    /* centra horizontalmente */
+    margin-left: 0;
+    margin-top: 1.5rem;    /* separación desde subtitulo */
+  }
+
+  .start-btn {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.8rem;
+    margin-bottom: 1rem;   /* espacio entre Start y LinkedIn */
+     right: -50px
+  }
+
+  .linkedin-button {
+    left: 0;
+    margin-top: 0;
+  }
+}
+/* -------------------------
+   Media Queries: Celulares muy pequeños
+   (max-width: 400px)
+------------------------- */
+@media (max-width: 400px) {
+  .macbook-pro .container {
+    padding-left: 1rem;
+  }
+
+  .welcome-text {
+    font-size: 32px;
+  }
+
+  .press-play {
+    font-size: 0.9rem;
+  }
+
+  .follow-text {
+    font-size: 0.8rem;
+  }
+
+  .socials-placeholder {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.6rem;
+  }
+
+  .start-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    margin-bottom: 0.8rem;   /* espacio entre Start y LinkedIn */
+    right: -50px
+  }
+}
