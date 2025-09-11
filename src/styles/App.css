@@ -3,6 +3,7 @@
   margin: auto;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Starjout", sans-serif;
 }
 
 html, body {
@@ -17,6 +18,6 @@ html, body {
   height: 100%;
 }
 body {
-  font-family: "starjout", monospace, sans-serif;
+  font-family: "Starjout", sans-serif;
 }
 
