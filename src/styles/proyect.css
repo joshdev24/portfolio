@@ -22,6 +22,11 @@
   mask-size: cover;
 }
 
+
+.projects-title h2{
+  color: aquamarine;
+}
+
 .projects-section::before {
   content: '';
   position: absolute;
@@ -36,6 +41,11 @@
   font-family: "starjout", monospace, sans-serif;
    color: transparent; -webkit-text-stroke: 2px #46bdbdcc; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
    animation: slideRight 2s ease forwards infinite
+
+
+
+
+
 
 
 }
