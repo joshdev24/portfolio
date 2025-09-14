@@ -117,3 +117,44 @@
 .contact-status.error {
   color: #f44336;
 }
+
+
+/* 📱 Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-main-title {
+    font-size: 2rem; /* más chico en mobile */
+    margin-bottom: 2rem;
+  }
+
+  .contact-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .contact-row {
+    flex-direction: column;       /* apilar label y input */
+    align-items: flex-start;      /* alineados a la izquierda */
+    gap: 0.5rem;                  /* espacio entre label y campo */
+  }
+
+  .contact-row label {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .contact-row input,
+  .contact-row textarea {
+    width: 100%;                  /* que ocupe todo el ancho */
+    font-size: 1rem;
+  }
+
+  .contact-btn {
+    width: 100%;                  /* botón ocupa todo */
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+}

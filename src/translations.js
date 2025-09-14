@@ -42,7 +42,7 @@ const translations = {
           company: "Freelance",
           duration: "2025 - Present",
           description:
-            "Web platform for a law and business services firm built with React for the frontend and Node.js Express for the backend using MongoDB. Provides tools for managing legal and corporate procedures including secure client authentication document submission and appointment scheduling. Designed to optimize client interaction improve efficiency and deliver a professional user experience.",
+            "Landing Page for a law and business services firm built with React for the frontend and Node.js Express for the backend using MongoDB. Provides tools for managing legal and corporate procedures including secure client authentication document submission and appointment scheduling. Designed to optimize client interaction improve efficiency and deliver a professional user experience.",
         },
       ],
     },
@@ -52,7 +52,7 @@ const translations = {
   name: "Name",
   namePlaceholder: "Your name",
   email: "Email",
-  emailPlaceholder: "your email@example.com",
+  emailPlaceholder: "your email",
   subject: "Subject",
   subjectPlaceholder: "Subject",
   message: "Message",
@@ -111,7 +111,7 @@ const translations = {
           company: "Freelance",
           duration: "2025 - Presente",
           description:
-                 "Plataforma web para un estudio de abogados y servicios empresariales construida con React en el frontend y MongoDB en el backend. Ofrece herramientas para gestionar tramites juridicos y empresariales incluyendo autenticacion segura de clientes envio de documentos y sistema de reservas de citas. Disenada para optimizar la interaccion con el cliente mejorar la eficiencia y brindar una experiencia profesional."
+                 "Landing Page para un estudio de abogados y servicios empresariales construida con React en el frontend y MongoDB en el backend. Ofrece herramientas para gestionar tramites juridicos y empresariales incluyendo autenticacion segura de clientes envio de documentos y sistema de reservas de citas. Disenada para optimizar la interaccion con el cliente mejorar la eficiencia y brindar una experiencia profesional."
 
         },
       ],
@@ -122,7 +122,7 @@ const translations = {
   name: "Nombre",
   namePlaceholder: "Tu nombre",
   email: "Correo electronico",
-  emailPlaceholder: "tu correo@ejemplo.com",
+  emailPlaceholder: "tu correo",
   subject: "Asunto",
   subjectPlaceholder: "Asunto",
   message: "Mensaje",

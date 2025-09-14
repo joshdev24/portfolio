@@ -127,3 +127,32 @@
 .close-btn:hover {
   background: #c62828;
 }
+
+
+
+
+
+/* Para móviles y pantallas chicas */
+@media (max-width: 768px) {
+  .about-page {
+    display: flex;
+    justify-content: center;   /* centra vertical */
+    align-items: center;       /* centra horizontal */
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .about-content {
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .about-title,
+  .about-title2 {
+    font-size: 32px; /* más chico para mobile */
+    line-height: 1.2;
+    text-align: center;
+  }
+}

@@ -23,6 +23,13 @@
   mask-size: cover;
 }
 
+.experience-company {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #e7cff5;
+}
+
 .experience-section::before {
   content: '';
   position: absolute;
@@ -164,4 +171,57 @@
 }
 .close-btn:hover {
   background: #6a1b9a;
+}
+
+
+/* 📱 Ajustes para tablets y móviles */
+@media (max-width: 768px) {
+  .experience-title-wrapper {
+    gap: 0.5rem;              /* menos espacio entre flechas y título */
+    margin-top: 2rem;
+    justify-content: space-between; /* mantiene flechas visibles */
+    width: 100%;              /* que ocupe todo el ancho */
+    max-width: 90vw;          /* evita que se corte en pantallas chicas */
+  }
+
+  .arrow-btn {
+    width: 40px;              /* más pequeñas */
+    height: 40px;
+    flex-shrink: 0;           /* evita que se achiquen demasiado */
+  }
+
+  .experience-title {
+    font-size: 1.5rem;        
+    flex: 1;                  /* ocupa el espacio del medio */
+    text-align: center;       /* centrado del texto */
+  }
+
+  .clicktoopen-overlay {
+    margin-top: 6rem;         
+    width: 250px;
+    font-size: 1rem;
+  }
+
+  .experience-description-box {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* 📱 Extra pequeño (celulares muy chicos) */
+@media (max-width: 480px) {
+  .arrow-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .experience-title {
+    font-size: 1.2rem;
+  }
+
+  .clicktoopen-overlay {
+    width: 200px;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+  }
 }
